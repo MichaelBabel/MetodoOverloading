@@ -12,6 +12,9 @@ public class Main {
 
         double resultado2 = adicionarValores(valor1, valor2, valor3);
         System.out.println("O resultado dos três valores é: " + resultado2);
+
+        double resultado3 = adicionarValores(valor1, valor2, valor3, valor1, valor2, valor3);
+        System.out.println("O resultado dos vários valores é: " + resultado3);
     }
         static String receberInput(String frase) {
             System.out.print(frase);
@@ -31,6 +34,15 @@ public class Main {
             double numero2 = Double.parseDouble(valor2);
             double numero3 = Double.parseDouble(valor3);
             double resultado = numero1 + numero2 + numero3;
+            return resultado;
+        }
+
+        static double adicionarValores(String ... valores) {
+            double resultado = 0;
+            for (String valor : valores) {
+                double valorDouble = Double.parseDouble(valor);
+                resultado += valorDouble;
+            }
             return resultado;
         }
 }
